@@ -22,7 +22,9 @@ body {
 .top-line {
     height: 9px;
     background: linear-gradient(to right,
-    #ff9933 33.33%, white 33.33% 66.66%, #138808 66.66%);
+        #ff9933 33.33%,
+        white 33.33% 66.66%,
+        #138808 66.66%);
 }
 
 header {
@@ -34,16 +36,24 @@ header {
 
 header h1 {
     color: #e87500;
-    font-size: 26px;
+    font-size: 25px;
+    margin: 5px 0 12px;
 }
 
 header p {
     color: #1456a0;
     font-weight: bold;
+    margin: 8px 0;
+}
+
+.header-subtitle {
+    color: #555;
+    font-size: 14px;
+    font-weight: normal;
 }
 
 .container {
-    max-width: 1000px;
+    max-width: 1050px;
     margin: auto;
     padding: 20px 13px;
 }
@@ -51,38 +61,43 @@ header p {
 h2 {
     text-align: center;
     color: #1456a0;
+    font-size: 22px;
 }
 
 .intro {
     text-align: center;
     line-height: 1.6;
     font-size: 14px;
+    color: #555;
 }
 
 .cards {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 13px;
-    margin-top: 22px;
+    gap: 14px;
+    margin-top: 24px;
 }
 
 .card {
     background: white;
-    padding: 17px 12px;
+    padding: 17px 13px;
     border-radius: 9px;
     box-shadow: 0 3px 8px #0002;
     border-top: 4px solid #ed7d16;
+    display: flex;
+    flex-direction: column;
 }
 
 .card h3 {
     font-size: 16px;
     color: #1456a0;
-    margin-top: 4px;
+    margin: 4px 0 10px;
 }
 
 .card p {
     font-size: 13px;
-    line-height: 1.5;
+    line-height: 1.6;
+    flex-grow: 1;
 }
 
 .card a {
@@ -95,6 +110,11 @@ h2 {
     border-radius: 6px;
     font-size: 12px;
     font-weight: bold;
+    margin-top: 10px;
+}
+
+.card a:hover {
+    background: #104c80;
 }
 
 .green-border {
@@ -109,9 +129,23 @@ h2 {
     border-top-color: #d94343;
 }
 
+.orange-border {
+    border-top-color: #ed7d16;
+}
+
+.notice {
+    background: white;
+    padding: 15px;
+    margin-top: 25px;
+    border-left: 5px solid #138808;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
 .back {
     display: block;
     text-align: center;
+    max-width: 300px;
     margin: 25px auto;
     background: #198754;
     color: white;
@@ -121,27 +155,33 @@ h2 {
     font-weight: bold;
 }
 
-.notice {
-    background: #fff;
-    padding: 15px;
-    margin-top: 25px;
-    border-left: 5px solid #138808;
-    font-size: 13px;
-    line-height: 1.6;
+.back:hover {
+    background: #12683f;
 }
 
 footer {
     background: #173b62;
     color: white;
     text-align: center;
-    padding: 22px;
+    padding: 22px 10px;
     margin-top: 30px;
     font-size: 13px;
+    line-height: 1.7;
 }
 
 @media (min-width: 650px) {
     .cards {
         grid-template-columns: repeat(3, 1fr);
+    }
+
+    header h1 {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 360px) {
+    .cards {
+        grid-template-columns: 1fr;
     }
 }
 </style>
@@ -152,92 +192,147 @@ footer {
 <div class="top-line"></div>
 
 <header>
-<h1>WEST BENGAL GOVERNMENT SCHEMES A TO Z</h1>
-<p>ALL GOVERNMENT SCHEMES INFORMATION</p>
-Find Government Schemes and Official Services
+    <h1>WEST BENGAL GOVERNMENT SCHEMES A TO Z</h1>
+    <p>ALL GOVERNMENT SCHEMES INFORMATION</p>
+    <div class="header-subtitle">
+        Find Government Schemes and Official Services
+    </div>
 </header>
 
 <div class="container">
 
-<h2>WEST BENGAL GOVERNMENT SCHEMES</h2>
+    <h2>WEST BENGAL GOVERNMENT SCHEMES</h2>
 
-<p class="intro">
-Explore government schemes, eligibility information,
-application guidance and official portals.
-</p>
+    <p class="intro">
+        Explore government schemes, eligibility information,
+        application guidance and official government portals.
+    </p>
 
-<div class="cards">
+    <div class="cards">
 
-<div class="card">
-<h3>Annapurna Yojana</h3>
-<p>Information about the West Bengal women's welfare scheme.</p>
-<a href="https://socialregistry.wb.gov.in/" target="_blank" rel="noopener">APPLY / OFFICIAL PORTAL →</a>
-</div>
+        <div class="card orange-border">
+            <h3>Annapurna Yojana</h3>
+            <p>
+                Information about the Annapurna Yojana
+                and its official application portal.
+            </p>
+            <a href="https://socialregistry.wb.gov.in/"
+               target="_blank" rel="noopener">
+                VISIT OFFICIAL PORTAL →
+            </a>
+        </div>
 
-<div class="card green-border">
-<h3>Ayushman Bharat (PM-JAY)</h3>
-<p>India's health assurance scheme. Check beneficiary eligibility and access Ayushman Card services through the official portal.</p>
-<a href="https://beneficiary.nha.gov.in/" target="_blank" rel="noopener">
-CHECK ELIGIBILITY / OFFICIAL PORTAL →
-</a>
-</div>
+        <div class="card green-border">
+            <h3>Ayushman Bharat (PM-JAY)</h3>
+            <p>
+                India's health assurance scheme.
+                Check beneficiary eligibility and access
+                Ayushman Card services.
+            </p>
+            <a href="https://beneficiary.nha.gov.in/"
+               target="_blank" rel="noopener">
+                CHECK ELIGIBILITY →
+            </a>
+        </div>
 
+        <div class="card purple-border">
+            <h3>West Bengal Student Credit Card</h3>
+            <p>
+                Education loan scheme for eligible students
+                pursuing higher studies in India or abroad.
+            </p>
+            <a href="https://wbscc.wb.gov.in/"
+               target="_blank" rel="noopener">
+                VISIT OFFICIAL PORTAL →
+            </a>
+        </div>
 
-</div>
+        <div class="card red-border">
+            <h3>Kanyashree Prakalpa</h3>
+            <p>
+                A West Bengal Government scheme providing
+                support to eligible girls and students.
+            </p>
+            <a href="https://kanyashree.wb.gov.in/"
+               target="_blank" rel="noopener">
+                VISIT OFFICIAL WEBSITE →
+            </a>
+        </div>
 
-<div class="card green-border">
-<h3>West Bengal Student Credit Card</h3>
-<p>Provides eligible students with education loans of up to ₹10 lakh for higher studies in India or abroad, subject to scheme rules and bank approval.</p>
-<a href="https://wbscc.wb.gov.in/" target="_blank" rel="noopener">
-VISIT OFFICIAL PORTAL →
-</a>
-</div>
+        <div class="card green-border">
+            <h3>Rupashree Prakalpa</h3>
+            <p>
+                A financial assistance scheme for eligible
+                families at the time of their daughters' marriage.
+            </p>
+            <a href="https://rupashree.wb.gov.in/"
+               target="_blank" rel="noopener">
+                VISIT OFFICIAL WEBSITE →
+            </a>
+        </div>
 
+        <div class="card orange-border">
+            <h3>Krishak Bandhu</h3>
+            <p>
+                A West Bengal farmer welfare scheme providing
+                financial assistance and social security benefits.
+            </p>
+            <a href="https://krishakbandhu.wb.gov.in/about_kb"
+               target="_blank" rel="noopener">
+                VIEW SCHEME DETAILS →
+            </a>
+        </div>
 
+        <div class="card purple-border">
+            <h3>Bangla Sahayata Kendra</h3>
+            <p>
+                Find government welfare schemes and access
+                citizen services through Bangla Sahayata Kendra.
+            </p>
+            <a href="https://bsk.wb.gov.in/all-schemes.html"
+               target="_blank" rel="noopener">
+                EXPLORE ALL SCHEMES →
+            </a>
+        </div>
 
-</div>
+        <div class="card red-border">
+            <h3>All Government Schemes</h3>
+            <p>
+                Explore the official West Bengal Government
+                scheme directory and available services.
+            </p>
+            <a href="https://wb.gov.in/government-schemes.aspx"
+               target="_blank" rel="noopener">
+                VIEW ALL SCHEMES →
+            </a>
+        </div>
 
-<div class="card red-border">
-<h3>Kanyashree Prakalpa</h3>
-<p>Scheme information for eligible girl students.</p>
-<a href="https://kanyashree.wb.gov.in/" target="_blank" rel="noopener">VISIT OFFICIAL WEBSITE →</a>
-</div>
+    </div>
 
-<div class="card green-border">
-<h3>Rupashree Prakalpa</h3>
-<p>Information about the Rupashree welfare scheme.</p>
-<a href="https://rupashree.wb.gov.in/" target="_blank" rel="noopener">VISIT OFFICIAL WEBSITE →</a>
-</div>
+    <div class="notice">
+        <strong>IMPORTANT INFORMATION</strong>
+        <p>
+            This is an independent public information guide
+            and is not an official government website.
+            We do not process government applications.
+            Always check eligibility, required documents and
+            current application instructions on the official
+            government portal.
+        </p>
+    </div>
 
-<div class="card purple-border">
-<h3>All Government Schemes</h3>
-<p>Explore the official West Bengal government scheme directory.</p>
-<a href="https://wb.gov.in/government-schemes.aspx" target="_blank" rel="noopener">VIEW ALL SCHEMES →</a>
-</div>
-
-<div class="card">
-<h3>Bangla Sahayata Kendra</h3>
-<p>Find government schemes and citizen service information.</p>
-<a href="https://bsk.wb.gov.in/scheme_bsk/" target="_blank" rel="noopener">VISIT OFFICIAL WEBSITE →</a>
-</div>
-
-</div>
-
-<div class="notice">
-<strong>IMPORTANT INFORMATION</strong>
-<p>This is an independent public information guide and is not an official government website. Always check eligibility, documents and current application instructions on the official government portal.</p>
-</div>
-
-<a href="index.html" class="back">← BACK TO HOME</a>
+    <a href="index.html" class="back">
+        ← BACK TO HOME
+    </a>
 
 </div>
 
 <footer>
-WEST BENGAL GOVERNMENT SCHEMES A TO Z
-<br>
-Independent Public Information Guide
-<br>
-This is not an official government website.
+    WEST BENGAL GOVERNMENT SCHEMES A TO Z
+    <br>
+    Independent Public Information Guide
+    <br>
+    This is not an official government website.
 </footer>
 
 </body>
